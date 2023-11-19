@@ -200,7 +200,7 @@ const Search = () => {
     }, 3000);
   };
 
-  // getAvailableTickets fonksiyonu
+  //Gidiş uçuşlarını listele
   const getAvailableTickets = () => {
     console.log(departureAirport);
     console.log(departureAirport);
@@ -211,12 +211,11 @@ const Search = () => {
         ticket.departureAirportId === departureAirport?.id &&
         ticket.arrivalAirportId === arrivalAirport?.id &&
         ticket.departureDate === departureDate 
-     
     );
     setAvailableTickets(getTickets);
     setNoAvailableTickets(getTickets.length === 0);
     
-    // Kontrol: Uygun uçuş bulunamazsa Snackbar'ı aç
+    //Kontrol: Uygun uçuş bulunamazsa Snackbar'ı aç
     if (getTickets.length === 0) {
       setSnackbarMessage("Uygun gidiş uçuşu bulunamadı!");
       setSnackbarOpen(true);
@@ -225,6 +224,7 @@ const Search = () => {
     }
   };
 
+  //Dönüş uçuşlarını listele
   const getAvailableReturnTickets = () => {
     const getReturnTickets = tickets.filter(
       (ticket) =>
@@ -232,7 +232,7 @@ const Search = () => {
         ticket.arrivalAirportId === departureAirport?.id &&
         ticket.departureDate === returningDate
     );
-    setReturnTickets(getReturnTickets);
+    setReturnTickets(getReturnTickets); 
     setNoAvailableTickets(getReturnTickets.length === 0);
     if (getReturnTickets.length === 0) {
       handleSnackbar("Uygun dönüş uçuşu bulunamadı!");
@@ -464,7 +464,8 @@ const Search = () => {
               disabled={
                 departureAirport === null ||
                 arrivalAirport === null ||
-                departureDate === null
+                departureDate === null ||
+                returningDate === null
               }
             >
               Uçuş Ara
@@ -479,7 +480,7 @@ const Search = () => {
                 ) : (
                   ""
                 )}
-              {availableTickets.length !== 0 && (
+              {availableTickets.length !== 0 && (   // Gidiş uçuşları
                 <Grid item xs={12} md={12}>
                   <Box sx={{ marginBottom: 1 }}>
                           <Box component="h5" fontWeight="bold">
@@ -500,7 +501,7 @@ const Search = () => {
                 />
                 </Grid>
               )}
-               {returnTickets.length !== 0 && (
+               {returnTickets.length !== 0 && (   //  Dönüş uçuşları
                 
                 <Grid item xs={12} md={12}>
                   <Box sx={{ marginBottom: 1 }}>
