@@ -276,7 +276,7 @@ const Home = () => {
   
       {tabValue === 0 && (
         <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Autocomplete
               sx={{ width: "100%" }}
               value={departureAirport}
@@ -292,7 +292,7 @@ const Home = () => {
               )}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Autocomplete
               sx={{ width: "100%" }}
               value={arrivalAirport}
@@ -308,7 +308,7 @@ const Home = () => {
               )}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6} >
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer
                 components={["DatePicker", "DatePicker"]}
@@ -334,7 +334,8 @@ const Home = () => {
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}></Grid>
+          <Grid item xs={12} md={6}>
             <Button
               variant="contained"
               color="primary"
@@ -397,7 +398,8 @@ const Home = () => {
 
       {tabValue === 1 && (
         <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>  
+          {/* responsive */}
             <Autocomplete
               sx={{ width: "100%" }}
               value={departureAirport}
@@ -413,7 +415,7 @@ const Home = () => {
               )}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Autocomplete
               sx={{ width: "100%" }}
               value={arrivalAirport}
@@ -429,7 +431,7 @@ const Home = () => {
               )}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer
                 components={["DatePicker", "DatePicker"]}
@@ -455,7 +457,7 @@ const Home = () => {
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer
                 components={["DatePicker", "DatePicker"]}
@@ -481,7 +483,7 @@ const Home = () => {
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Button
               variant="contained"
               color="primary"
